@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кастомное Радио</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .player {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        input[type="range"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Маруся ФМ НА RP-IR!</h1>
+    <div class="player">
+        <button id="playButton">Играть</button>
+        <button id="stopButton" disabled>Стоп</button>
+        <br>
+        <label for="volume">Громкость:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+    </div>
+    <audio id="audioPlayer">
+        <source src="http://mariafm.ru:8000/maria-fm.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элементы.
+    </audio>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const playButton = document.getElementById('playButton');
+        const stopButton = document.getElementById('stopButton');
+        const volumeControl = document.getElementById('volume');
+
+        playButton.addEventListener('click', () => {
+            audio.play();
+            playButton.disabled = true;
+            stopButton.disabled = false;
+        });
+
+        stopButton.addEventListener('click', () => {
+            audio.pause();
+            playButton.disabled = false;
+            stopButton.disabled = true;
+        });
+
+        volumeControl.addEventListener('input', () => {
+            audio.volume = volumeControl.value;
+        });
+    </script>
+</body>
+</html>

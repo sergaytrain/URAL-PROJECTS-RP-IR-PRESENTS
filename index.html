@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RP-IR RADIO</title>
+    <style>
+        * {
+            background-color: #222;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .radios a {
+            text-decoration: none;
+            font-size: 50px;
+        }
+
+        .radios {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .radios2 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+    .tgchannel {
+     text-align: center;
+     margin-top: 50px;
+    }
+    </style>
+    <script>
+        let titles = ["RP-IR RADIO", "Главная", "СЛУШАЙ РАДИО НА НАШЕМ ТЕЛЕГРАММ БОТЕ!"];
+        let index = 0;
+
+        function changeTitle() {
+            document.title = titles[index];
+            index = (index + 1) % titles.length;
+        }
+
+        setInterval(changeTitle, 1000); // Меняем заголовок каждые 2 секунды
+    </script>
+</head>
+<body>
+    <div class="radios2">
+        <h2>Выбери радио!</h2>
+    </div>
+    <div class="radios">
+        <a href="marusyafm.html">Маруся ФМ </a>
+    </div>
+    <div class="radios">
+        <a href="recordEKB.html">Рекорд ФМ </a>
+    </div>
+    <div class="radios">
+        <a href="RetroFM.html">Retro FM </a>
+    </div>
+    <div class="radios">
+        <a href="radioDacha.html">Радио Дача </a>
+    </div>
+    <div class="radios">
+        <a href="shansonEKB.html">Радио Шансон </a>
+    </div>
+    <div class="socialnetwork">
+        <div class="tgchannel">
+            <a href="https://t.me/RolePlayIR_Minecraft">
+                <img src="telegramlogo.png" alt="TELEGRAM" />
+            </a>            
+        </div>
+    </div>
+</body>
+</html>
